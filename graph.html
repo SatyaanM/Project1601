@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <title>COVID-19 TRACKER - Graphs</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class='graphs'>
+        <canvas id="caseGraph" width="400" height="400"></canvas>
+    </div>
+    <div class='graphs'>
+        <canvas id="deathGraph" width="400" height="400"></canvas>
+    </div>
+    <div class='graphs'>
+        <canvas id="recoveredGraph" width="400" height="400"></canvas>
+    </div>
+
+    <script src="graph.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

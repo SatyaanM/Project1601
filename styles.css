@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background-color: ghostwhite;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+}
+
+.sidebar {
+    width: 200px;
+    height: 100%;
+    background: #4b4276;
+    padding: 30px 0px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    border: 1px solid hsla(290, 60%, 70%, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/*didn't change with tags or classes so had to change each id*/
+
+#country, #cases, #deaths, #recovered, #new-c{
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+}
+/*different font size for #new_d*/
+#new_d {
+    padding: 0px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.search_field {
+    float: right;
+    top: -20px;
+}
+
+.sidebar ul li:hover {
+    background-color: #8177b3;
+}
+
+.main_content {
+    width: 100%;
+    margin-left: 200px;
+}
+
+.main_content .header {
+    padding: 25px;
+    background: #fff;
+    color: #737373;
+    font-weight: bold;
+    border-bottom: 1px solid #e0e4e8;
+    font-size: 22px;
+}
+
+.main_content .info {
+    margin: 15px;
+    color: #737373;
+    line-height: 30px;
+}
+
+.main_content .info div {
+    margin-bottom: 20px;
+}
+
+
+
+
+table {
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    line-height: 20px;
+}
+
+tr th {
+    font-size: 24px;
+}
+
+th td {
+    width: 20%;
+}
+
+.td_left {
+    border-right: 1px solid #C0C0C0;
+}
+
+.td_middle {
+    border-right: 1px solid #C0C0C0;
+}
+
+th,
+td {
+    border-bottom: 1px solid #C0C0C0;
+    overflow: hidden;
+}
+
+th:hover {
+  font-size: 120%;
+}
+th {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    background-color: #C0C0C0;
+    color: black;
+    position: sticky;
+    top: 0;
+}
+
+tr td:first-child,
+tr th:first-child {
+    border-left: 2px solid black;
+}
+
+tr td:last-child,
+tr th:last-child {
+    border-right: 2px solid black;
+}
+
+tr:last-child {
+    border-bottom: 2px solid black;
+}
+
+tr:first-child {
+    border-top: 2px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(228, 225, 225);
+}
+
+@media only screen and (max-width: 922px){
+  .sidebar{
+    display: none;
+  }
+  .main_content {
+    margin-left :0px;
+    flex-direction: column; 
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .sidebar{
+    display: none;
+  }
+  .main_content {
+    margin-left :0px;
+    flex-direction: row; 
+    padding-left: 0;
+  }
+  .header {
+    display: inline-block;
+    height: 40px;
+    padding: 0 0 20px 0 !important;
+    text-align: auto !important;
+  }
+  .header-title{
+    padding-left: 10px;
+    font-size: 12px !important;
+  }
+  .search_field {
+    transform: scale(0.45);
+    height: 12px;
+    top: -45px;
+  }
+  tr th {
+    font-size: 16px;
+    color: #0000EE;
+  }
+  tr th:hover{
+    color: #551A8B;
+  }
+}
+
+.graphs {
+    height: 500px;
+    width: 500px;
+}
+
