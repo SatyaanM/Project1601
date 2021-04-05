@@ -15,6 +15,8 @@ async function drawGraph(graphType) {
         }
     } catch (e) {
         console.log(e);
+        window.location.replace('index.html');
+        alert(`Error Displaying Graphs for: ${currentCountry}`);
     } finally {
         switch (graphType) {
             case 'cases':
@@ -37,7 +39,6 @@ function resetGraph() {
 
 function caseGraph() {
     resetGraph();
-    console.log('hi');
     const ctx = document.getElementById('myGraph').getContext('2d');
     const caseDates = Object.keys(country.cases);
     const caseCounts = Object.values(country.cases);
@@ -59,7 +60,6 @@ function caseGraph() {
 
 function deathGraph() {
     resetGraph();
-    console.log('hi');
     const ctx = document.getElementById('myGraph').getContext('2d');
     const deathDates = Object.keys(country.deaths);
     const deathCounts = Object.values(country.deaths);
@@ -81,7 +81,6 @@ function deathGraph() {
 
 function recoveredGraph() {
     resetGraph();
-    console.log('hi');
     const ctx = document.getElementById('myGraph').getContext('2d');
     const recoveredDates = Object.keys(country.recovered);
     const recoveredCounts = Object.values(country.recovered);
