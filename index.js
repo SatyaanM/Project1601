@@ -11,10 +11,10 @@ function drawTable(countries) {
         })
         html += `
         <tr>
-            <td class='td_left'><a href='graph.html?country=${country['name']}'>${country['name']}</a></td>
-            <td class='td_middle'>${country['totalCases']}</td>
-            <td class='td_middle'>${country['totalDeaths']}</td>
-            <td class='td_middle'>${country['totalRecovered']}</td>
+            <td class='td_left'><a href='graph.html?country=${country.name}'>${country.name}</a></td>
+            <td class='td_middle'>${country.totalCases}</td>
+            <td class='td_middle'>${country.totalDeaths}</td>
+            <td class='td_middle'>${country.totalRecovered}</td>
             <td class='td_middle'>${country.dailyCases}</td>
             <td class='td_right'>${country.dailyDeaths}</td>
         </tr>

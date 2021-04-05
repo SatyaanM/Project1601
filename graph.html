@@ -25,6 +25,15 @@
                 <li>
                     <div class="row"><button id="recovered" onclick="drawGraph('recovered')" class="col s10 offset-s1 btn waves-effect waves-light">Recovered</button></div>
                 </li>
+                <li>
+                    <div class="row"><button id="new-c" onclick="drawGraph('dailyCases')" class="col s10 offset-s1 btn waves-effect waves-light">Daily Cases</button></div>
+                </li>
+                <li>
+                    <div class="row"><button id="new_d" onclick="drawGraph('dailyDeaths')" class="col s10 offset-s1 btn waves-effect waves-light">Daily Deaths</button></div>
+                </li>
+                <li>
+                    <div class="row"><button id="new_r" onclick="drawGraph('dailyRecovered')" class="col s10 offset-s1 btn waves-effect waves-light">Daily Recovered</button></div>
+                </li>
             </ul>
         </div>
         <div class="main_content">
@@ -37,7 +46,6 @@
                 <canvas id="myGraph" width="600" height="400"></canvas>
             </div>
         </div>
-
 
         <script src="graph.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>

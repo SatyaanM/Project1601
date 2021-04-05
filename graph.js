@@ -1,10 +1,28 @@
 let country;
 let currentUrl = window.location.search;
 let currentCountry = currentUrl.slice(9);
+let countryUrl = `https://disease.sh/v3/covid-19/historical/${currentCountry}?lastdays=30`;
+
+function getDailyData() {
+    let cases = Object.values(country.cases);
+    let deaths = Object.values(country.deaths);
+    let recovered = Object.values(country.recovered);
+    let dates = Object.keys(country.cases);
+    let dailyCases = {};
+    let dailyDeaths = {};
+    let dailyRecovered = {};
+    for (let x = 0; x < cases.length - 1; x++) {
+        dailyCases[dates[x + 1]] = (cases[x + 1] - cases[x]);
+        dailyDeaths[dates[x + 1]] = (deaths[x + 1] - deaths[x]);
+        dailyRecovered[dates[x + 1]] = (recovered[x + 1] - recovered[x]);
+    }
+    country.dailyCases = dailyCases;
+    country.dailyDeaths = dailyDeaths;
+    country.dailyRecovered = dailyRecovered;
+}
 
 async function drawGraph(graphType) {
     try {
-        const countryUrl = `https://disease.sh/v3/covid-19/historical/${currentCountry}?lastdays=30`;
         let response = await fetch(countryUrl);
         let data = await response.json();
         country = {
@@ -13,9 +31,11 @@ async function drawGraph(graphType) {
             'deaths': data.timeline.deaths,
             'recovered': data.timeline.recovered,
         }
-    } catch (e) {
-        console.log(e);
-        window.location.replace('index.html');
+        getDailyData(country);
+
+    } catch (error) {
+        console.log(error);
+        // window.location.replace('index.html');
         alert(`Error Displaying Graphs for: ${currentCountry}`);
     } finally {
         switch (graphType) {
@@ -28,7 +48,17 @@ async function drawGraph(graphType) {
             case 'recovered':
                 recoveredGraph();
                 break;
+            case 'dailyCases':
+                dailyCasesGraph();
+                break;
+            case 'dailyDeaths':
+                dailyDeathsGraph();
+                break;
+            case 'dailyRecovered':
+                dailyRecoveredGraph();
+                break;
         }
+        console.log(country);
     }
 }
 
@@ -96,6 +126,69 @@ function recoveredGraph() {
     }
     let myLineChart = new Chart(ctx, {
         type: 'line',
+        data: data,
+    })
+}
+
+function dailyCasesGraph() {
+    resetGraph();
+    const ctx = document.getElementById('myGraph').getContext('2d');
+    const dates = Object.keys(country.dailyCases);
+    const dailyCases = Object.values(country.dailyCases);
+    const data = {
+        labels: dates,
+        datasets: [{
+            label: `${country.name} daily cases`,
+            data: dailyCases,
+            fill: false,
+            borderColor: 'rgb(75, 66, 118)',
+            tension: 0.1,
+        }]
+    }
+    let myBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+    })
+}
+
+function dailyDeathsGraph() {
+    resetGraph();
+    const ctx = document.getElementById('myGraph').getContext('2d');
+    const dates = Object.keys(country.dailyDeaths);
+    const dailyDeaths = Object.values(country.dailyDeaths);
+    const data = {
+        labels: dates,
+        datasets: [{
+            label: `${country.name} daily cases`,
+            data: dailyDeaths,
+            fill: false,
+            borderColor: 'rgb(75, 66, 118)',
+            tension: 0.1,
+        }]
+    }
+    let myBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+    })
+}
+
+function dailyRecoveredGraph() {
+    resetGraph();
+    const ctx = document.getElementById('myGraph').getContext('2d');
+    const dates = Object.keys(country.dailyRecovered);
+    const dailyRecovered = Object.values(country.dailyRecovered);
+    const data = {
+        labels: dates,
+        datasets: [{
+            label: `${country.name} daily recovered`,
+            data: dailyRecovered,
+            fill: false,
+            borderColor: 'rgb(75, 66, 118)',
+            tension: 0.1,
+        }]
+    }
+    let myBarChart = new Chart(ctx, {
+        type: 'bar',
         data: data,
     })
 }
