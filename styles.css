@@ -34,6 +34,10 @@ body {
     font-size: 35px;
 }
 
+.sidebar a:visited {
+    color: #fff;
+}
+
 .sidebar ul li {
     padding: 10px;
     border: 1px solid hsla(290, 60%, 70%, 0.2);
@@ -41,14 +45,22 @@ body {
     box-sizing: border-box;
 }
 
+
 /*didn't change with tags or classes so had to change each id*/
 
-#country, #cases, #deaths, #recovered, #new-c{
+#country,
+#cases,
+#deaths,
+#recovered,
+#new-c {
     padding: 0px;
     text-align: center;
     font-size: 14px;
 }
+
+
 /*different font size for #new_d*/
+
 #new_d {
     padding: 0px;
     text-align: center;
@@ -88,9 +100,6 @@ body {
     margin-bottom: 20px;
 }
 
-
-
-
 table {
     text-align: center;
     table-layout: fixed;
@@ -125,8 +134,9 @@ td {
 }
 
 th:hover {
-  font-size: 120%;
+    font-size: 120%;
 }
+
 th {
     border-bottom: 2px solid black;
     border-top: 2px solid black;
@@ -158,52 +168,51 @@ tr:nth-child(even) {
     background-color: rgb(228, 225, 225);
 }
 
-@media only screen and (max-width: 922px){
-  .sidebar{
-    display: none;
-  }
-  .main_content {
-    margin-left :0px;
-    flex-direction: column; 
-    padding-left: 0;
-  }
+@media only screen and (max-width: 922px) {
+    .sidebar {
+        display: none;
+    }
+    .main_content {
+        margin-left: 0px;
+        flex-direction: column;
+        padding-left: 0;
+    }
 }
 
-@media only screen and (max-width: 600px){
-  .sidebar{
-    display: none;
-  }
-  .main_content {
-    margin-left :0px;
-    flex-direction: row; 
-    padding-left: 0;
-  }
-  .header {
-    display: inline-block;
-    height: 40px;
-    padding: 0 0 20px 0 !important;
-    text-align: auto !important;
-  }
-  .header-title{
-    padding-left: 10px;
-    font-size: 12px !important;
-  }
-  .search_field {
-    transform: scale(0.45);
-    height: 12px;
-    top: -45px;
-  }
-  tr th {
-    font-size: 16px;
-    color: #0000EE;
-  }
-  tr th:hover{
-    color: #551A8B;
-  }
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+    .main_content {
+        margin-left: 0px;
+        flex-direction: row;
+        padding-left: 0;
+    }
+    .header {
+        display: inline-block;
+        height: 40px;
+        padding: 0 0 20px 0 !important;
+        text-align: auto !important;
+    }
+    .header-title {
+        padding-left: 10px;
+        font-size: 12px !important;
+    }
+    .search_field {
+        transform: scale(0.45);
+        height: 12px;
+        top: -45px;
+    }
+    tr th {
+        font-size: 16px;
+        color: #0000EE;
+    }
+    tr th:hover {
+        color: #551A8B;
+    }
 }
 
-.graphs {
+#graph {
     height: 500px;
     width: 500px;
 }
-

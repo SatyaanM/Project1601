@@ -57,7 +57,6 @@ function sortBy(key) {
     } else {
         sortUrl = url.slice(0, 55) + '&sort=' + key + url.slice(55);
     }
-    // console.log(sortUrl);
     fetchTable(sortUrl);
 }
 
@@ -71,7 +70,6 @@ function search() {
         td = tr[i].getElementsByTagName("td")[0];
         if (td) {
             txtValue = td.textContent || td.innerText;
-            // console.log(txtValue);
             if (txtValue === '') {
                 fetchTable(url);
             } else if (txtValue.trim().toUpperCase().includes(searchTerm)) {

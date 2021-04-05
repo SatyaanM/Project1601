@@ -1,31 +1,44 @@
-function fetchCountryGraphs(country) {
-    let countryUrl = `https://disease.sh/v3/covid-19/historical/${country}?lastdays=30`;
-    fetch(countryUrl)
-        .then((response) => response.json())
-        .then((response) => {
-            drawGraphs(response);
-        })
-        .catch((error) => {
-            alert('Error Displaying Graph for Selected Country.');
-            window.location.replace('index.html');
-        })
+let country;
+let currentUrl = window.location.search;
+let currentCountry = currentUrl.slice(9);
 
-}
-
-function drawGraphs(response) {
-    let country = {
-        'name': response.country,
-        'cases': response.timeline.cases,
-        'deaths': response.timeline.deaths,
-        'recovered': response.timeline.recovered,
+async function drawGraph(graphType) {
+    try {
+        const countryUrl = `https://disease.sh/v3/covid-19/historical/${currentCountry}?lastdays=30`;
+        let response = await fetch(countryUrl);
+        let data = await response.json();
+        country = {
+            'name': data.country,
+            'cases': data.timeline.cases,
+            'deaths': data.timeline.deaths,
+            'recovered': data.timeline.recovered,
+        }
+    } catch (e) {
+        console.log(e);
+    } finally {
+        switch (graphType) {
+            case 'cases':
+                caseGraph();
+                break;
+            case 'deaths':
+                deathGraph();
+                break;
+            case 'recovered':
+                recoveredGraph();
+                break;
+        }
     }
-    caseGraph(country);
-    deathGraph(country);
-    recoveredGraph(country);
 }
 
-function caseGraph(country) {
-    const ctx = document.getElementById('caseGraph').getContext('2d');
+function resetGraph() {
+    const graph = document.getElementById('graph');
+    graph.innerHTML = `<canvas id="myGraph" width="400" height="400"></canvas>`;
+}
+
+function caseGraph() {
+    resetGraph();
+    console.log('hi');
+    const ctx = document.getElementById('myGraph').getContext('2d');
     const caseDates = Object.keys(country.cases);
     const caseCounts = Object.values(country.cases);
     const data = {
@@ -44,8 +57,10 @@ function caseGraph(country) {
     })
 }
 
-function deathGraph(country) {
-    const ctx = document.getElementById('deathGraph').getContext('2d');
+function deathGraph() {
+    resetGraph();
+    console.log('hi');
+    const ctx = document.getElementById('myGraph').getContext('2d');
     const deathDates = Object.keys(country.deaths);
     const deathCounts = Object.values(country.deaths);
     const data = {
@@ -64,8 +79,10 @@ function deathGraph(country) {
     })
 }
 
-function recoveredGraph(country) {
-    const ctx = document.getElementById('recoveredGraph').getContext('2d');
+function recoveredGraph() {
+    resetGraph();
+    console.log('hi');
+    const ctx = document.getElementById('myGraph').getContext('2d');
     const recoveredDates = Object.keys(country.recovered);
     const recoveredCounts = Object.values(country.recovered);
     const data = {
@@ -84,7 +101,4 @@ function recoveredGraph(country) {
     })
 }
 
-let currentUrl = window.location.search;
-let currentCountry = currentUrl.slice(9);
-// console.log(currentCountry);
-fetchCountryGraphs(currentCountry);
+drawGraph('cases');
