@@ -3,7 +3,7 @@
   version 2
   7th April 2007
   Stuart Langridge, http://www.kryogenix.org/code/browser/sorttable/
-
+ 
   Instructions:
   Download this file
   Add <script src="sorttable.js"></script> to your HTML

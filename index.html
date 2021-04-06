@@ -41,7 +41,6 @@
         <div class="main_content">
             <div class="header">
                 <span class="header-title">WORLD COVID-19 STATS</span>
-                <!--made this to reload too case small screens dont have the h2 reload one?-->
                 <span class="input-field row s6 search_field inline">
           <i class="material-icons prefix">search</i>
           <input placeholder="Search" id="country_search" type="text" onkeyup="search()">
@@ -55,12 +54,12 @@
                             <table class="centered all-countries sortable" id="country_table">
                                 <thead>
                                     <tr>
-                                        <th id='th-country'>Country</th>
-                                        <th id='th-cases'>Cases</th>
-                                        <th id='th-deaths'>Deaths</th>
-                                        <th id='th-recovered'>Recovered</th>
-                                        <th id='th-newcases'>New Cases</th>
-                                        <th id='th-newdeaths'>New Deaths</th>
+                                        <th id='th-country' class='sorttable_numeric'>Country</th>
+                                        <th id='th-cases' class='sorttable_numeric'>Cases</th>
+                                        <th id='th-deaths' class='sorttable_numeric'>Deaths</th>
+                                        <th id='th-recovered' class='sorttable_numeric'>Recovered</th>
+                                        <th id='th-newcases' class='sorttable_numeric'>New Cases</th>
+                                        <th id='th-newdeaths' class='sorttable_numeric'>New Deaths</th>
                                     </tr>
                                 </thead>
                                 <tbody id="result"></tbody>

@@ -10,6 +10,7 @@
 
 body { 
     background-color: ghostwhite;
+    overflow-x: hidden;
 }
 
 .wrapper {
@@ -79,6 +80,7 @@ body {
 .main_content {
     width: 100%;
     margin-left: 200px;
+    
 }
 
 .main_content .header {
@@ -96,6 +98,18 @@ body {
     line-height: 30px;
 }
 
+.main_content::before{
+  background-image: url(virus.jpg);
+  background-size: stretch;
+  background-position: center;
+  content: "";
+  position: absolute;
+  min-width:100%;
+  min-height: 100%;
+  z-index: -2;
+  opacity: 0.4; /*was original 0.3*/
+}
+/* nvm */
 .main_content .info div {
     margin-bottom: 20px;
 }
@@ -109,10 +123,13 @@ table {
 
 tr {
     line-height: 20px;
+    color:black;
+    text-decoration: solid;
 }
 
 tr th {
     font-size: 24px;
+    
 }
 
 th td {
@@ -189,13 +206,13 @@ tr:nth-child(even) {
     }
     .main_content {
         margin-left: 0px;
-        flex-direction: row;
+        flex-direction: column;
         padding-left: 0;
     }
     .header {
         display: inline-block;
         height: 40px;
-        padding: 0 0 20px 0 !important;
+        padding: 0 0px 20px 0 !important;
         text-align: auto !important;
     }
     .header-title {
@@ -217,8 +234,7 @@ tr:nth-child(even) {
     }
   
 }
-
 #graph {
     height: 500px;
     width: 500px;
-} 
+}

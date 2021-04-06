@@ -141,7 +141,8 @@ function dailyCasesGraph() {
             label: `${country.name} daily cases`,
             data: dailyCases,
             fill: false,
-            borderColor: 'rgb(75, 66, 118)',
+            // borderColor: 'rgb(75, 66, 118)',
+            backgroundColor: 'rgb(75, 66, 118)',
             tension: 0.1,
         }]
     }
@@ -162,7 +163,8 @@ function dailyDeathsGraph() {
             label: `${country.name} daily cases`,
             data: dailyDeaths,
             fill: false,
-            borderColor: 'rgb(75, 66, 118)',
+            // borderColor: 'rgb(75, 66, 118)',
+            backgroundColor: 'rgb(75, 66, 118)',
             tension: 0.1,
         }]
     }
@@ -183,7 +185,8 @@ function dailyRecoveredGraph() {
             label: `${country.name} daily recovered`,
             data: dailyRecovered,
             fill: false,
-            borderColor: 'rgb(75, 66, 118)',
+            // borderColor: 'rgb(75, 66, 118)',
+            backgroundColor: 'rgb(75, 66, 118)',
             tension: 0.1,
         }]
     }
@@ -192,5 +195,6 @@ function dailyRecoveredGraph() {
         data: data,
     })
 }
+function 
 //testing git
 drawGraph('cases');
