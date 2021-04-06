@@ -10,7 +10,7 @@ function getDailyData() {
     let dates = Object.keys(country.cases);
     let dailyCases = {};
     let dailyDeaths = {};
-    let dailyRecovered = {}; 
+    let dailyRecovered = {};
     for (let x = 0; x < cases.length - 1; x++) {
         dailyCases[dates[x + 1]] = (cases[x + 1] - cases[x]);
         dailyDeaths[dates[x + 1]] = (deaths[x + 1] - deaths[x]);

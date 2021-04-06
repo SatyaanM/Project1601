@@ -18,29 +18,30 @@
             <h2><a href='index.html'>COVID-19 TRACKER</a></h2>
             <ul>
                 <li>
-                    <div class="row"><button id="country" onclick="sortBy('country')" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Country</button></div>
+                    <div class="row"><button id="country" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-country'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Country</button></div>
                 </li>
                 <li>
-                    <div class="row"><button id="cases" onclick="sortBy('cases')" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Cases</button></div>
+                    <div class="row"><button id="cases" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-cases'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Cases</button></div>
                 </li>
                 <li>
-                    <div class="row"><button id="deaths" onclick="sortBy('deaths')" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Deaths</button></div>
+                    <div class="row"><button id="deaths" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-deaths'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Deaths</button></div>
                 </li>
                 <li>
-                    <div class="row"><button id="recovered" onclick="sortBy('recovered')" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Recovered</button></div>
+                    <div class="row"><button id="recovered" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-recovered'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Recovered</button></div>
                 </li>
                 <li>
-                    <div class="row"><button id="new-c" onclick="sortBy('todayCases')" class="col s10 offset-s1 btn waves-effect waves-light">Sort By New Cases</button></div>
+                    <div class="row"><button id="new-c" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-newcases'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By New Cases</button></div>
                 </li>
                 <li>
-                    <div class="row"><button id="new_d" onclick="sortBy('todayDeaths')" class="col s10 offset-s1 btn waves-effect waves-light">Sort By New Deaths</button></div>
+                    <div class="row"><button id="new_d" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-newdeaths'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By New Deaths</button></div>
                 </li>
             </ul>
         </div>
 
         <div class="main_content">
             <div class="header">
-                <span class="header-title">WORLD COVID-19 STATS</span>  <!--made this to reload too case small screens dont have the h2 reload one?-->
+                <span class="header-title">WORLD COVID-19 STATS</span>
+                <!--made this to reload too case small screens dont have the h2 reload one?-->
                 <span class="input-field row s6 search_field inline">
           <i class="material-icons prefix">search</i>
           <input placeholder="Search" id="country_search" type="text" onkeyup="search()">
@@ -51,15 +52,15 @@
                 <div>
                     <main class="tablerow">
                         <article class="col s12">
-                            <table class="centered all-countries" id="country_table">
+                            <table class="centered all-countries sortable" id="country_table">
                                 <thead>
                                     <tr>
-                                        <th onclick="sortBy('country')">Country</th>
-                                        <th onclick="sortBy('cases')">Cases</th>
-                                        <th onclick="sortBy('deaths')">Deaths</th>
-                                        <th onclick="sortBy('recovered')">Recovered</th>
-                                        <th onclick="sortBy('todayCases')">New Cases</th>
-                                        <th onclick="sortBy('todayDeaths')">New Deaths</th>
+                                        <th id='th-country'>Country</th>
+                                        <th id='th-cases'>Cases</th>
+                                        <th id='th-deaths'>Deaths</th>
+                                        <th id='th-recovered'>Recovered</th>
+                                        <th id='th-newcases'>New Cases</th>
+                                        <th id='th-newdeaths'>New Deaths</th>
                                     </tr>
                                 </thead>
                                 <tbody id="result"></tbody>
@@ -70,7 +71,8 @@
             </div>
         </div>
     </div>
-    <script src="index.js"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/sorttable.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
