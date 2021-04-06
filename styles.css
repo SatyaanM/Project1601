@@ -8,7 +8,7 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-body {
+body { 
     background-color: ghostwhite;
 }
 
@@ -165,8 +165,12 @@ tr:first-child {
 }
 
 tr:nth-child(even) {
-    background-color: rgb(228, 225, 225);
+   background-color: rgb(228, 225, 225);
 }
+/* tr:nth-child(odd) {
+   background-color: white;
+} */
+
 
 @media only screen and (max-width: 922px) {
     .sidebar {
@@ -207,12 +211,14 @@ tr:nth-child(even) {
         font-size: 16px;
         color: #0000EE;
     }
+    
     tr th:hover {
-        color: #551A8B;
+        color: rgba(84, 26, 139, 0.671);
     }
+  
 }
 
 #graph {
     height: 500px;
     width: 500px;
-}
+} 
