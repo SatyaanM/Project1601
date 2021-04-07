@@ -83,6 +83,7 @@ function totalGraph() {
     let myLineChart = new Chart(ctx, {
         type: 'line',
         data: data,
+        options: { responsive: false },
     })
 }
 
