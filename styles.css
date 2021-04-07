@@ -8,7 +8,7 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-body { 
+body {
     background-color: ghostwhite;
     overflow-x: hidden;
 }
@@ -16,7 +16,7 @@ body {
 .wrapper {
     display: flex;
     position: relative;
-} 
+}
 
 .sidebar {
     width: 200px;
@@ -80,7 +80,6 @@ body {
 .main_content {
     width: 100%;
     margin-left: 200px;
-    
 }
 
 .main_content .header {
@@ -98,20 +97,28 @@ body {
     line-height: 30px;
 }
 
-.main_content::before{
-  background-image: url(virus.jpg);
-  background-size: stretch;
-  background-position: center;
-  content: "";
-  position: absolute;
-  min-width:100%;
-  min-height: 100%;
-  z-index: -2;
-  opacity: 0.4; /*was original 0.3*/
+.main_content::before {
+    background-image: url(virus.jpg);
+    background-size: stretch;
+    background-position: center;
+    content: "";
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    opacity: 0.4;
+    /*was original 0.3*/
 }
+
+
 /* nvm */
+
 .main_content .info div {
     margin-bottom: 20px;
+}
+
+table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
+    content: " \25B4\25BE"
 }
 
 table {
@@ -123,13 +130,12 @@ table {
 
 tr {
     line-height: 20px;
-    color:black;
+    color: black;
     text-decoration: solid;
 }
 
 tr th {
     font-size: 24px;
-    
 }
 
 th td {
@@ -182,10 +188,8 @@ tr:first-child {
 }
 
 tr:nth-child(even) {
-   background-color: rgb(228, 225, 225);
+    background-color: rgb(228, 225, 225);
 }
-
-
 
 @media only screen and (max-width: 922px) {
     .sidebar {
@@ -226,12 +230,11 @@ tr:nth-child(even) {
         font-size: 16px;
         color: #0000EE;
     }
-    
     tr th:hover {
         color: rgba(84, 26, 139, 0.671);
     }
-  
 }
+
 #graph {
     height: 1000px;
     width: 800px;

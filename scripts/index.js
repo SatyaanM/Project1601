@@ -4,7 +4,7 @@ let global;
 function drawTable(countries) {
     let html = `
     <tr>
-        <td class='td_left'><a href='graph.html?country=Global'>Global</a></td>
+        <td class='td_left'><a href='country.html?country=Global'>Global</a></td>
         <td class='td_middle'>${global.totalConfirmed}</td>
         <td class='td_middle'>${global.totalDeaths}</td>
         <td class='td_middle'>${global.totalRecovered}</td>
@@ -21,7 +21,7 @@ function drawTable(countries) {
         })
         html += `
         <tr>
-            <td class='td_left'><a href='graph.html?country=${country.name}'>${country.name}</a></td>
+            <td class='td_left'><a href='country.html?country=${country.name}'>${country.name}</a></td>
             <td class='td_middle'>${country.totalConfirmed}</td>
             <td class='td_middle'>${country.totalDeaths}</td>
             <td class='td_middle'>${country.totalRecovered}</td>
@@ -37,7 +37,7 @@ function drawTable(countries) {
 function search() {
     let inputField = document.getElementById('country_search');
     let searchTerm = inputField.value.toUpperCase();
-    let table = document.getElementById('country_table');
+    let table = document.getElementById('home_table');
     let tr = table.getElementsByTagName('tr');
     for (let i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[0];

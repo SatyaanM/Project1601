@@ -130,32 +130,33 @@ function recoveredGraph() {
     })
 }
 
-function compareCountryCases(){
-  resetGraph();
-  const ctx = document.getElementById('myGraph').getContext('2d');
-  const caseDates = Object.keys(country.cases);
-  const caseCounts = Object.values(country.cases);
-  //figure out how to get highest country?
-  //hows it going?
-  
-  const data = {
+function compareCountryCases() {
+    resetGraph();
+    const ctx = document.getElementById('myGraph').getContext('2d');
+    const caseDates = Object.keys(country.cases);
+    const caseCounts = Object.values(country.cases);
+    //figure out how to get highest country?
+    //hows it going?
+
+    const data = {
         labels: caseDates,
         datasets: [{
-            label: `${country.name} cases for the past 30 days`,
-            data: caseCounts,
-            fill: false,
-            borderColor: 'rgb(0, 0, 205)',
-            tension: 0.1,
-        },
-        {
-          //idk how to get highest
-        }]
+                label: `${country.name} cases for the past 30 days`,
+                data: caseCounts,
+                fill: false,
+                borderColor: 'rgb(0, 0, 205)',
+                tension: 0.1,
+            },
+            {
+                //idk how to get highest
+            }
+        ]
     }
     let myLineChart = new Chart(ctx, {
         type: 'line',
         data: data,
     })
-  
+
 }
 
 
