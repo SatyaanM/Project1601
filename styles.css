@@ -85,7 +85,7 @@ body {
 
 .main_content .header {
     padding: 25px;
-    background: #fff;
+    background: rgb(255, 255, 255);
     color: #737373;
     font-weight: bold;
     border-bottom: 1px solid #e0e4e8;
@@ -184,9 +184,7 @@ tr:first-child {
 tr:nth-child(even) {
    background-color: rgb(228, 225, 225);
 }
-/* tr:nth-child(odd) {
-   background-color: white;
-} */
+
 
 
 @media only screen and (max-width: 922px) {
@@ -235,6 +233,6 @@ tr:nth-child(even) {
   
 }
 #graph {
-    height: 500px;
-    width: 500px;
+    height: 1000px;
+    width: 800px;
 }
