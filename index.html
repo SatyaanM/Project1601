@@ -2,79 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>COVID-19 TRACKER</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <title>COVID-19 TRACKER</title>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="sidebar">
-            <h2><a href='index.html'>COVID-19 TRACKER</a></h2>
-            <ul>
-                <li>
-                    <div class="row"><button id="country" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-country'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Country</button></div>
-                </li>
-                <li>
-                    <div class="row"><button id="cases" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-cases'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Cases</button></div>
-                </li>
-                <li>
-                    <div class="row"><button id="deaths" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-deaths'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Deaths</button></div>
-                </li>
-                <li>
-                    <div class="row"><button id="recovered" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-recovered'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Recovered</button></div>
-                </li>
-                <li>
-                    <div class="row"><button id="new-c" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-newcases'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By New Cases</button></div>
-                </li>
-                <li>
-                    <div class="row"><button id="new_d" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-newdeaths'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By New Deaths</button></div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="main_content">
-            <div class="header">
-                <span class="header-title">WORLD COVID-19 STATS</span>
-                <span class="input-field row s6 search_field inline">
-          <i class="material-icons prefix">search</i>
-          <input placeholder="Search" id="country_search" type="text" onkeyup="search()">
-        </span>
-            </div>
-
-            <div class="info">
-                <div>
-                    <main class="tablerow">
-                        <article class="col s12">
-                            <table class="centered all-countries sortable" id="home_table">
-                                <thead>
-                                    <tr>
-                                        <th id='th-country' class='sorttable_numeric'>Country</th>
-                                        <th id='th-cases' class='sorttable_numeric'>Cases</th>
-                                        <th id='th-deaths' class='sorttable_numeric'>Deaths</th>
-                                        <th id='th-recovered' class='sorttable_numeric'>Recovered</th>
-                                        <th id='th-newcases' class='sorttable_numeric'>New Cases</th>
-                                        <th id='th-newdeaths' class='sorttable_numeric'>New Deaths</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="result"></tbody>
-                            </table>
-                        </article>
-                    </main>
-                </div>
-            </div>
-        </div>
+  <div class="wrapper">
+    <div class="sidebar">
+      <h2><a href='index.html'>COVID-19 TRACKER</a></h2>
+      <ul>
+        <li>
+          <div class="row"><button id="country" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-country'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Country</button></div>
+        </li>
+        <li>
+          <div class="row"><button id="cases" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-cases'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Cases</button></div>
+        </li>
+        <li>
+          <div class="row"><button id="deaths" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-deaths'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Deaths</button></div>
+        </li>
+        <li>
+          <div class="row"><button id="recovered" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-recovered'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By Recovered</button></div>
+        </li>
+        <li>
+          <div class="row"><button id="new-c" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-newcases'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By New Cases</button></div>
+        </li>
+        <li>
+          <div class="row"><button id="new_d" onclick="sorttable.innerSortFunction.apply(document.getElementById('th-newdeaths'), [])" class="col s10 offset-s1 btn waves-effect waves-light">Sort By New Deaths</button></div>
+        </li>
+      </ul>
     </div>
 
-    <script src="./scripts/sorttable.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./scripts/index.js"></script>
+    <div class="main_content">
+      <div class="header">
+        <span class="header-title">WORLD COVID-19 STATS</span>
+        <span class="input-field row s6 search_field inline">
+        <i class="material-icons prefix">search</i>
+        <input placeholder="Search" id="country_search" type="text" onkeyup="search()">
+        </span>
+      </div>
+
+      <div class="info">
+        <div>
+          <main class="tablerow">
+            <article class="col s12">
+              <table class="centered all-countries sortable" id="home_table">
+              <thead>
+                <tr>
+                  <th id='th-country' class='sorttable_numeric'>Country</th>
+                  <th id='th-cases' class='sorttable_numeric'>Cases</th>
+                  <th id='th-deaths' class='sorttable_numeric'>Deaths</th>
+                  <th id='th-recovered' class='sorttable_numeric'>Recovered</th>
+                  <th id='th-newcases' class='sorttable_numeric'>New Cases</th>
+                  <th id='th-newdeaths' class='sorttable_numeric'>New Deaths</th>
+                </tr>
+              </thead>
+              <tbody id="result"></tbody>
+              </table>
+            </article>
+          </main>
+        </div>
+      </div>
+       <br><br>
+    <footer>
+      <div class="page-footer #e0e0e0 grey lighten-1">
+       <div clas="container">
+          <div class="row">
+          <div class="col s6 black-text">
+            <h5>Resources</h5>
+            <a href="https://www.chartjs.org/docs/latest/" class="left black-text"> Chart.js</a><br>
+            <a href="https://documenter.getpostman.com/view/10808728/SzS8rjbc" class="left black-text"> API on Postman </a><br>
+            <a href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" class="left black-text"> Materialize </a>
+          </div>
+
+          <div class="col s6 black-text">
+            <h5>References</h5>
+            <a href="https://www.w3schools.com/" class="left black-text"> W3Schools </a><br>
+            <a href="https://weblabs.web.app/" class="left black-text"> Labs </a><br>
+          </div>
+        </div>
+       </div>
+      </div>
+    </footer>
+    </div>
+  </div>
+
+  <script src="./scripts/sorttable.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
