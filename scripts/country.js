@@ -41,7 +41,7 @@ async function fetchData() {
             recovered.push(e.Cases);
         })
     } catch (error) {
-        // window.location.replace('index.html');
+        window.location.replace('index.html');
         alert(`Error Loading Page: ${error}`);
         console.log(error);
     } finally {
