@@ -15,45 +15,45 @@
     <div class="wrapper ">
         <div class="sidebar ">
             <h2><a href='index.html'>COVID-19 TRACKER</a></h2>
+
             <ul>
-                <!-- <li>
-                    <div class="row "><button id="cases " onclick="drawGraph( 'cases') " class="col s10 offset-s1 btn waves-effect waves-light ">these</button></div>
+                <li>
+                    <div class="row"><a id="country" href="#graph-1" class="col s10 offset-s1 btn waves-effect waves-light">Historic Statistics</a></div>
                 </li>
                 <li>
-                    <div class="row "><button id="deaths " onclick="drawGraph( 'deaths') " class="col s10 offset-s1 btn waves-effect waves-light ">buttons</button></div>
+                    <div class="row"><a id="cases" href="#graph-2" class="col s10 offset-s1 btn waves-effect waves-light">Daily Confirmed Cases</a></div>
                 </li>
                 <li>
-                    <div class="row "><button id="recovered " onclick="drawGraph( 'recovered') " class="col s10 offset-s1 btn waves-effect waves-light ">serve</button></div>
+                    <div class="row"><a id="deaths" href="#graph-3" class="col s10 offset-s1 btn waves-effect waves-light">Daily Deaths</a></div>
                 </li>
                 <li>
-                    <div class="row "><button id="new-c " onclick="drawGraph( 'dailyCases') " class="col s10 offset-s1 btn waves-effect waves-light ">no</button></div>
+                    <div class="row"><a id="recovered" href="#graph-4" class="col s10 offset-s1 btn waves-effect waves-light">Daily Recovered</a></div>
                 </li>
                 <li>
-                    <div class="row "><button id="new_d " onclick="drawGraph( 'dailyDeaths') " class="col s10 offset-s1 btn waves-effect waves-light ">actual</button></div>
+                    <div class="row"><a id="country-table" href="#result" class="col s10 offset-s1 btn waves-effect waves-light">Table</a></div>
                 </li>
-                <li>
-                    <div class="row "><button id="new_r " onclick="drawGraph( 'dailyRecovered') " class="col s10 offset-s1 btn waves-effect waves-light ">purpose</button></div>
-                </li> -->
             </ul>
         </div>
-        <div class="main_content ">
+        <div class="main_content    ">
             <div class="header ">
                 <span class="header-title"><a href='index.html' id='country-title'></a></span>
             </div>
 
-            <!-- div containing the graph -->
-            <div class='graph-container'>
-                <canvas id="total-graph" class="graphs"></canvas>
+            <div>
+                <div class='graph-container' id='graph-1'>
+                    <canvas id="total-graph" class="graphs"></canvas>
+                </div>
+                <div class='graph-container' id='graph-2'>
+                    <canvas id="cases-bar" class="graphs"></canvas>
+                </div>
+                <div class='graph-container' id='graph-3'>
+                    <canvas id="deaths-bar" class="graphs"></canvas>
+                </div>
+                <div class='graph-container' id='graph-4'>
+                    <canvas id="recovered-bar" class="graphs"></canvas>
+                </div>
             </div>
-            <div class='graph-container'>
-                <canvas id="cases-bar" class="graphs"></canvas>
-            </div>
-            <div class='graph-container'>
-                <canvas id="deaths-bar" class="graphs"></canvas>
-            </div>
-            <div id='graph-container'>
-                <canvas id="recovered-bar" class="graphs"></canvas>
-            </div>
+
             <div>
                 <table class="sortable" id="country_table">
                     <thead>
