@@ -91,8 +91,8 @@ async function fetchSummary() {
         let response = await fetch('https://api.covid19api.com/summary', options);
         data = await response.json();
         if (data.Message) {
-            console.log("Caching");
-            alert("API is caching data. Please try again later.");
+            console.log(data.Message);
+            alert(data.Message);
         }
     } catch (error) {
         console.log(error);
