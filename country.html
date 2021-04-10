@@ -42,8 +42,17 @@
             </div>
 
             <!-- div containing the graph -->
-            <div id='graph'>
-                <canvas id="myGraph"></canvas>
+            <div class='graph-container'>
+                <canvas id="total-graph" class="graphs"></canvas>
+            </div>
+            <div class='graph-container'>
+                <canvas id="cases-bar" class="graphs"></canvas>
+            </div>
+            <div class='graph-container'>
+                <canvas id="deaths-bar" class="graphs"></canvas>
+            </div>
+            <div id='graph-container'>
+                <canvas id="recovered-bar" class="graphs"></canvas>
             </div>
             <div>
                 <table class="sortable" id="country_table">

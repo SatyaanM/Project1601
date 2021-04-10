@@ -1,7 +1,13 @@
 let countries = [];
 let global;
 let data;
-
+let options = {
+  method: 'GET',
+  mode: 'cors',
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  },
+};
 function drawTable(countries) {
   let html = `
     <tr>
@@ -81,13 +87,22 @@ function setCountries(data) {
 
 async function fetchSummary() {
   try {
-    let response = await fetch('https://api.covid19api.com/summary');
+    let response = await fetch('https://api.covid19api.com/summary', options);
     data = await response.json();
   } catch (error) {
     console.log(error);
   } finally {
     setCountries(data);
+    updateDate();
     drawTable(countries);
   }
 }
+
+function updateDate() {
+  const ctx = document.getElementById('update-date');
+  const dateUpdated = data['Date'];
+  let txt = `Last Updated: ${dateUpdated}`;
+  ctx.innerText = txt;
+}
+
 fetchSummary();

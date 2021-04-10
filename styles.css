@@ -35,6 +35,10 @@ body {
     font-size: 35px;
 }
 
+.sidebar a {
+  color: #fff;
+}
+
 .sidebar a:visited {
     color: #fff;
 }
@@ -205,6 +209,10 @@ footer {
   height: 2.5rem; 
   
 }
+footer a:hover{
+    color: #1c2aa7 !important;
+    
+}
 
 
 @media only screen and (max-width: 922px) {
@@ -256,14 +264,15 @@ footer {
     }
     
     /* why is this not working :/ */
-    //because there is important myGraph css set afterwards
-    #myGraph {
+    /* because there is important myGraph css set afterwards */
+    /* but this bit was meant to be for the <600px media query...i also moved it and removed the important but it doesnt work, i think it needs js? */
+    .graphs {
       height:450px;
       width:600px;
     }
 }
 
-#myGraph {
+.graphs {
     width: 1000px !important;
     height: 600px !important;
 }
