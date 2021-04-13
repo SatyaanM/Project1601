@@ -18,7 +18,7 @@
   - UI Design
   - UI Implementation
 - Sonika Singh
-  - UI Implementationt
+  - UI Implementation
   - Marketing
 
 
