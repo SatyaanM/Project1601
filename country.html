@@ -2,41 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>COVID-19 TRACKER - Graphs</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	<title>COVID-19 TRACKER - Graphs</title>
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapper ">
-        <div class="sidebar ">
-            <h2><a href='index.html'>COVID-19 TRACKER</a></h2>
+	<div class="wrapper ">
+		<div class="sidebar ">
+			<h2><a href='index.html'>COVID-19 TRACKER</a></h2>
 
-            <ul>
-                <li>
-                    <div class="row"><a id="country" href="#graph-1" class="col s10 offset-s1 btn waves-effect waves-light">Historic Statistics</a></div>
-                </li>
-                <li>
-                    <div class="row"><a id="cases" href="#graph-2" class="col s10 offset-s1 btn waves-effect waves-light">Daily Confirmed Cases</a></div>
-                </li>
-                <li>
-                    <div class="row"><a id="deaths" href="#graph-3" class="col s10 offset-s1 btn waves-effect waves-light">Daily Deaths</a></div>
-                </li>
-                <li>
-                    <div class="row"><a id="recovered" href="#graph-4" class="col s10 offset-s1 btn waves-effect waves-light">Daily Recovered</a></div>
-                </li>
-                <li>
-                    <div class="row"><a id="country-table" href="#result" class="col s10 offset-s1 btn waves-effect waves-light">Table</a></div>
-                </li>
-            </ul>
-        </div>
-        <div class="main_content">
-            <div class="header ">
-                <span class="header-title"><a href='index.html' id='country-title'></a></span>
+			<ul>
+				<li>
+					<div class="row"><a id="country" href="#graph-1" class="col s10 offset-s1 btn waves-effect waves-light">Historic Stats</a></div>
+				</li>
+				<li>
+					<div class="row"><a id="cases" href="#graph-2" class="col s10 offset-s1 btn waves-effect waves-light">Daily Confirmed
+							Cases</a></div>
+				</li>
+				<li>
+					<div class="row"><a id="deaths" href="#graph-3" class="col s10 offset-s1 btn waves-effect waves-light">Daily Deaths</a></div>
+				</li>
+				<li>
+					<div class="row"><a id="recovered" href="#graph-4" class="col s10 offset-s1 btn waves-effect waves-light">Daily Recovered</a></div>
+				</li>
+				<li>
+					<div class="row"><a id="country-table" href="#result" class="col s10 offset-s1 btn waves-effect waves-light">Table</a></div>
+				</li>
+			</ul>
+		</div>
+		<div class="main_content">
+			<div class="header ">
+				<span class="header-title"><a href='index.html' id='country-title'></a></span>
             </div>
 
             <div>
@@ -67,7 +68,46 @@
                     <tbody id="result"></tbody>
                 </table>
             </div>
+            <br><br>
+            <footer>
+                <div class="page-footer #e0e0e0 grey lighten-1" id='fc-container'>
+                    <div class="container center" id='footer-container'>
+                        <div class="row">
+                            <hr id='testing123'>
+                            <div class="col s6 black-text ">
+                                <h6 class="center">RESOURCES</h6>
+                                <div class="col s6 black-text">
+                                    <a href="https://www.chartjs.org/docs/latest/" class="left"> Chart.js</a><br>
+                                    <a href="https://documenter.getpostman.com/view/10808728/SzS8rjbc" class="left"> Postman API</a><br>
+                                    <a href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" class="left"> Materialize</a><br>
+                                    <a href="https://logomakr.com/" class="left"> Favicon</a>
+                                </div>
+
+                                <div class="col s6 black-text">
+                                    <a href="https://www.kryogenix.org/code/browser/sorttable/" class="right">Javascript Library</a><br>
+                                    <a href="https://www.favicon-generator.org/" class="right">Favicon Generator</a><br>
+                                    <a href="https://pixabay.com/images/search/virus/" class="right">Background</a><br>
+                                </div>
+                            </div>
+
+                            <div class="col s6 black-text ">
+                                <h6 class="center">REFERENCES</h6>
+                                <a href="https://www.w3schools.com/" class="left"> W3Schools </a><br>
+                                <a href="https://weblabs.web.app/" class="left "> Labs </a><br>
+                                <a href="https://www.youtube.com/watch?v=YesSVqjcDts&t=738s" class="left"> Youtube Video</a>
+                            </div>
+
+                        </div>
+
+                        <div class="row black-text ">
+                            <hr>
+                            <h6 id='update-date'></h6>
+                        </div>
+                    </div>
+
+            </footer>
         </div>
+      </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "></script>
         <script src="./scripts/sorttable.js "></script>

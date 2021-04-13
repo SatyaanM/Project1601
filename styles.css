@@ -267,6 +267,9 @@ footer a:hover {
         width: 80vw !important;
         height: 45vh !important;
     }
+    #footer-container {
+        margin-left: 5% !important;
+    }
 }
 
 canvas {

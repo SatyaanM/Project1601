@@ -21,6 +21,11 @@ let countryName;
 
 async function fetchData() {
     try {
+      if (currentCountry === 'Global'){
+        alert("No Country Page for Global. Please choose another country.");
+        window.location.replace('index.html'); 
+        return;       
+      }
         let responseConfirmed = await fetch(urlConfirmed, options);
         let responseRecovered = await fetch(urlRecovered, options);
         let responseDeaths = await fetch(urlDeaths, options);

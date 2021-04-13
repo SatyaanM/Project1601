@@ -93,8 +93,10 @@ async function fetchSummary() {
         if (data.Message) {
             console.log(data.Message);
             alert(data.Message);
+            window.location.replace('index.html');
         }
     } catch (error) {
+        window.location.replace('index.html');
         console.log(error);
     } finally {
         setCountries(data);
