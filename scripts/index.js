@@ -29,7 +29,7 @@ function drawTable(countries) {
         })
         html += `
         <tr>
-            <td class='td_left'><a href='country.html?country=${country.name}'>${country.name}</a></td>
+            <td class='td_left'><a href='country.html?country=${country.slug}'>${country.name}</a></td>
             <td class='td_middle'>${country.totalConfirmed}</td>
             <td class='td_middle'>${country.totalDeaths}</td>
             <td class='td_middle'>${country.totalRecovered}</td>
@@ -74,6 +74,7 @@ function setCountries(data) {
     data.Countries.forEach(e => {
         let country = {
             'name': e.Country,
+            'slug': e.Slug,
             'newConfirmed': e.NewConfirmed,
             'totalConfirmed': e.TotalConfirmed,
             'newDeaths': e.NewDeaths,
@@ -85,7 +86,7 @@ function setCountries(data) {
         countries.push(country);
     })
 }
-
+//removed window.location.replace because it causes a redirect loop when API is caching
 async function fetchSummary() {
     try {
         let response = await fetch('https://api.covid19api.com/summary', options);
@@ -93,10 +94,10 @@ async function fetchSummary() {
         if (data.Message) {
             console.log(data.Message);
             alert(data.Message);
-            window.location.replace('index.html');
+            // window.location.replace('index.html');
         }
     } catch (error) {
-        window.location.replace('index.html');
+        // window.location.replace('index.html');
         console.log(error);
     } finally {
         setCountries(data);

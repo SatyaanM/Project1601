@@ -6,6 +6,7 @@
 - Satish Maharaj
   - Lead
   - UI Implementation
+  - CSS
 - Satyaan Maharaj
   - UI Design
   - UI Implementation
